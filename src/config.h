@@ -6,6 +6,23 @@
  * función
  *
  */
+
+#include "utils.h"
+
+// Hay que indicar la frecuenca de nuestra radio
+#define RF69_FREQ 868.0 // esto es un comentario 868//915.0
+
+// Cada radio tiene un identificador
+#define DEST_ADDRESS 2 // Esta es el identificador del satelite.
+
+// Cada emisor deberá tener una dirección única
+#define MY_ADDRESS 1
+
+// Pines donde están conectadas nuestras placas, definidos por el fabricante
+
+#define RFM69_INT 3 //
+#define RFM69_CS 10 //
+#define RFM69_RST 4 //
 // El tamaño de la estructura es de muy grande (18 Bytes)
 struct dato {
 	uint16_t idPaquete;
@@ -15,7 +32,7 @@ struct dato {
 	float acMinima;
 } paquete;
 
-// El tamañana de la estructura es de 4 bytes
+// El tamañano de la estructura es de 4 bytes
 /*
  * temperatura, aceleración máxima y mínima se guardan como enteros
  * La altitud se divide por 10 así tenemos rangos de altitud sufuciente con un
